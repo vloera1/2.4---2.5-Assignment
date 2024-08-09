@@ -68,86 +68,84 @@ table {
 }
 
 /* ------- Global & Body -------*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html{
-    width: 100%;
+    background-color: var(--white);
+    width: 414px;
+    margin: 0 auto;
 }
 
 body{
-    line-height: 1;
+    background-color: var(--white);
+    min-width: 320px;
+    margin: 0 auto;
 }
 
-/* ------- Typography -------*/
 h1, h2, h3{
     font-family: var(--molle-font);
+    font-size: 3rem;
 }
 
-h4, p, q, a, small, nav, button, form{
+h4, p, q, small, nav, button, form{
     font-family: var(--mont-font);
 }
 
-h1{
-    font-size: 3rem;
-    padding-top: 0.5rem;
-}
-
-h2{
-    font-size: 2.5rem;
-}
-
-h3{
-    font-size: 2rem;
-}
-
-h4{
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-p{
-    line-height: 1.5rem;
-}
 
 /* ------- Header -------*/
 header{
     background-image: linear-gradient(to bottom, var(--teal) 0%, var(--white) 100%);
     display: grid;
-    align-items: center;
-    padding: 1em 2em;
+    position: relative;
 }
 
-header p{
-    font-size: 1.25em;
+#logo img{
+    width: 40%;
+    height: auto;
 }
 
-/* ------- Nav -------*/
-nav{
-    display: block;
-    margin: 0;
-    padding: 0;
+#toggle{
+    display: none;
 }
 
-nav a{
-    text-decoration: none;
+header h1{
+    padding-left: 30px;
+    padding-right: 90px;
+    padding-bottom: 20px;
+    line-height: 1.5;
+    font-size: large;
+}
+
+header label{
+    position: absolute;
+    top: 25px;
+    right: 0;
+    cursor: pointer;
+    padding: 10px 70px;
+    background-color: var(--yellow);
     color: var(--black);
-    border: 1px solid var(--dkGray);
-    display: block;
-    padding: 2.5em;
+    width: 175px;
 }
 
 nav ul{
-    width: 100%;
     display: none;
-    position: absolute;
-    top: 5.5em;
-    right: 0;
 }
 
-input[name="toggle"]:checked ~ ul, input[name="toggle"]:checked ~ label{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--teal);
+#toggle:checked + label + ul{
+    display: block;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    background-color: var(--yellow);
+    color: var(--black);
+    width: 175px;
+}
+
+header h2{
+    display: none;
 }
 
 #skip{
@@ -171,244 +169,232 @@ input[name="toggle"]:checked ~ ul, input[name="toggle"]:checked ~ label{
     top: 30px;
 }
 
-
-
-
-
-
-
 /* ------- Main -------*/
-    /* ------- Contact -------*/
-    fieldset, input, label, select, textarea{
-        display: block;
-        width: 100%;
-        margin: auto;
-    }
 
-    .form-required{
-        font-family: var(--mont-font);
-        font-style: italic;
-        font-size: 0.5em;
-    }
-
-    .required{
-        color: var(--purple);
-        font-size: 1.5em;
-    }
-
-    input::placeholder{
-        font-size: 1em;
-        color: var(--black);
-        padding-left: 0.5em;
-    }
-
-    input, select{
-        border: 3px solid var(--purple);
-        height: 3em;
-        font-family: var(--mont-font);
-        font-size: 1.5em;
-        color: var(--black);
-        margin-bottom: 1em;
-    }
-
-    .radio-label{
-        text-transform: lowercase;
-        text-transform: capitalize;
-        font-weight: 100;
-        font-size: 1.25em;
-    }
-
-    fieldset input{
-        width: 5em;
-        accent-color: var(--purple);
-        background-color: var(--purple);
-    }
-
-    label[for="prefEmail"], label[for="prefText"], label[for="prefPhone"]{
-        margin-left: 0;
-    }
-
-/* ------- Classes -------*/
-.sr-only{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
+#intro{
+    background-color: var(--white);
 }
 
-/* ------- Footer -------*/
-footer{
-    background-color: var(--ltGray);
+#intro h2{
+    font-size: 2rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
 }
 
-footer p, footer a{
+#intro p{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+
+#img-grid img{
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+#img-grid picture img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 20px;
+}
+
+#plan{
+    background-color: var(--yellow);
+}
+
+#plan h3{
+    font-size: 2rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+}
+
+#plan div{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+#plan section{
+    background-color: var(--teal);
+    margin: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top:40px;
+    padding-bottom:40px;
+    border: 6px solid white;
+}
+
+#plan section h4{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#plan img{
+    margin: auto; 
+    width: 225px; 
+    height: 225px;
+}
+
+#testimonials{
+    padding-bottom:20px;
+    background-color: var(--white);
+}
+#testimonials h3{
+    font-size: 2rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+}
+
+#testimonials div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+#testimonials section {
+    text-align: center; 
+}
+
+#testimonials h4{
+    font-size: 28px;
+    text-transform: uppercase;
+    font-variation-settings: 'wght' 550;
+    padding-top: 6px;
+    width: 270px;
+    line-height: 1.25em;
+    margin: 0 auto;
+}
+
+#testimonials p{
+    font-size: 18px;
+    font-variation-settings: 'wght' 320;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#testimonials q{
+    font-size: 18px;
+    font-variation-settings: 'wght' 340;
+    font-style: italic;
+    width: 250px;
     display: block;
-    margin: auto;
-    text-align: center;
-    text-decoration: none;
-    color: var(--black);
-    padding: 1em;
+    line-height: 1.3em;
+    margin: 0 auto;
 }
 
-/* ------- Media Queries -------*/
-    /* ------- Tablet -------*/
-    @media screen and (min-width: 768px) {
-        header{
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: 2fr 1fr;
-            padding: 1em 3em;
-        }
+#about{
+    background-color: var(--blue);
+}
 
-        header h1, header p{
-            grid-column: 2/-1;
-            grid-row: 1/2;
-        }
+#about h3 {
+    font-size: 2.5rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+}
 
-        header h1{
-            margin-top: -1.5em;
-        }
+#about div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 5px; 
+    padding: 20px; 
+}
 
-        header p{
-            padding-top: 3.5em;
-            padding-right: 1em;
-        }
+#about section {
+    text-align: center; 
 
-        nav{
-            grid-column: 1/-1;
-            padding: 1em 2em;
-        }
+    padding: 20px; 
+}
 
-        nav ul{
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.75em;
-            padding: 0;
-            background-color: transparent;
-            position: static;
-        }
+#about img {
+    display: block; 
+    margin: 0 auto 10px; 
+    width: 100px; 
+    height: 100px; 
+}
 
-        nav a{
-            background-color: var(--white);
-            border: none;
-            padding: 1.25em 0.75em;
-        }
+#contact h3{
+    padding-top: 30px;
+    font-size: 36px;
+    margin-top: 10px;
+}
+h3 span{
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-style: italic;
+}
+#names{
+    padding-bottom: 15px;
+}
+#contact{
+    background-color: var(--white);
+}
+form{
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    color: #222;
+    font-size: 1.1em;
+}
+#contact label{
+    text-transform: uppercase;
+    font-variation-settings: 'wght' 550;
+    padding-left:0;
+    font-size: 18px;
+}
+#nums legend{
+    text-transform: uppercase;
+    font-variation-settings: 'wght' 550;
+    padding-left:0;
+    font-size: 18px;
+}
+#nums label{
+    text-transform: none;
+    font-variation-settings: 'wght' 380;
+}
+#names input::placeholder{
+    font-family: 'Montserrat';
+}
+#nums input::placeholder{
+    font-family: 'Montserrat';
+}
+input, label, fieldset{
+    display: block;
+    width:100%;
+}
+.required{
+  display: inline-block;
+  color: var(--purple);
+  padding-left: 1px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+label{
+    padding-left: 0.5em;
+    margin: 0.75em 0 0.25em 0;
+}
 
-        nav a:hover{
-            background-color: var(--yellow);
-        }
-
-        .active a{
-            background-color: var(--yellow);
-        }
-
-        h3{
-            padding: 10px 28px;
-        }
-
-        input, label, select, textarea  {
-            width: 100%;
-        }
-
-        fieldset {
-            display: flex;
-            justify-content: space-between;
-            width: auto;
-            margin: 0;
-        }
-
-        fieldset label {
-            width: auto;
-            margin: 0;
-            padding: 0;
-        }
-
-        footer{
-            clear: right;
-            display: flex;
-            padding-left: 3em;
-            padding-right: 3em;
-        }
-    }
-
-    /* ------- Laptop -------*/
-    @media screen and (min-width: 1440px){
-        header {
-            grid-template-columns: 1fr 5fr;
-            grid-template-rows: 1fr;
-            padding: 0 0 3em;
-        }
-
-        header h1 {
-            margin: 0 0 0.25em;
-            font-size: 4em;
-        }
-
-        header p {
-            align-self: flex-end;
-            font-size: 1.5em;
-        }
-
-        nav {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 0;
-            padding: 0;
-            font-size: 1.25em;
-        }
-
-        nav a {
-            padding: 0.75em 0.5em;
-        }
-
-        form {
-            display: grid;
-            grid-template-columns: repeat(3, 33.33%);
-            gap: 1em;
-        }
-
-        .radio-input {
-            margin: 0;
-            padding: 0;
-        }
-
-        input[type="radio"] {
-            width: 1em;
-            height: 1em;
-        }
-
-        input[type="radio"]:checked::before {
-            transform: scale(0.5);
-        }
-
-        footer {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            padding-left: 6em;
-            padding-right: 6em;
-        }
-
-        footer p {
-            grid-column: span 2;
-        }
-            
-        footer a:first-of-type {
-            grid-column: 5;
-        }
-    }
-
-    /* ------- Large Screen Radio Buttons -------*/
-    @media screen and (min-width: 1520px){
-        input[type="radio"] {
-            width: 3em;
-            height: 3em;
-        }
-
-        input[type="radio"]:checked::before {
-            transform: scale(3.5);
-        }
-    }
-
+#nums input[type="radio"] {
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+#nums label {
+    display: flex;
+    align-items: center;
+}
+#nums input[type="radio"] + span.radio-label {
+    order: -1;
+}
+#nums input[type="radio"] + span.radio-label {
+    margin-right: 10px;
+}
