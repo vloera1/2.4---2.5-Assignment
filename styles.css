@@ -71,20 +71,344 @@ table {
 html{
     width: 100%;
 }
+
 body{
     line-height: 1;
 }
 
 /* ------- Typography -------*/
 h1, h2, h3{
+    font-family: var(--molle-font);
+}
+
+h4, p, q, a, small, nav, button, form{
     font-family: var(--mont-font);
+}
+
+h1{
+    font-size: 3rem;
+    padding-top: 0.5rem;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p{
+    line-height: 1.5rem;
+}
+
+/* ------- Header -------*/
+header{
+    background-image: linear-gradient(to bottom, var(--teal) 0%, var(--white) 100%);
+    display: grid;
+    align-items: center;
+    padding: 1em 2em;
+}
+
+header p{
+    font-size: 1.25em;
+}
+
+/* ------- Nav -------*/
+nav{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--black);
+    border: 1px solid var(--dkGray);
+    display: block;
+    padding: 2.5em;
+}
+
+nav ul{
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 5.5em;
+    right: 0;
+}
+
+input[name="toggle"]:checked ~ ul, input[name="toggle"]:checked ~ label{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--teal);
+}
+
+#skip{
+    left: 50%;
+    position: absolute;
+    transform: translateY(-100%);
+}
+#skip{
+    background: #e77e23;
+    height: -70px;
+    left: 50%;
+    padding: 4px;
+    position: absolute;
+    top: -30px;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+  
+#skip:focus{
+    transform: translateY(0%);
+    top: 30px;
 }
 
 
 
-/* ------- Text -------*/
-/* ------- Text -------*/
-/* ------- Text -------*/
-/* ------- Text -------*/
-/* ------- Text -------*/
-/* ------- Text -------*/
+
+
+
+
+/* ------- Main -------*/
+    /* ------- Contact -------*/
+    fieldset, input, label, select, textarea{
+        display: block;
+        width: 100%;
+        margin: auto;
+    }
+
+    .form-required{
+        font-family: var(--mont-font);
+        font-style: italic;
+        font-size: 0.5em;
+    }
+
+    .required{
+        color: var(--purple);
+        font-size: 1.5em;
+    }
+
+    input::placeholder{
+        font-size: 1em;
+        color: var(--black);
+        padding-left: 0.5em;
+    }
+
+    input, select{
+        border: 3px solid var(--purple);
+        height: 3em;
+        font-family: var(--mont-font);
+        font-size: 1.5em;
+        color: var(--black);
+        margin-bottom: 1em;
+    }
+
+    .radio-label{
+        text-transform: lowercase;
+        text-transform: capitalize;
+        font-weight: 100;
+        font-size: 1.25em;
+    }
+
+    fieldset input{
+        width: 5em;
+        accent-color: var(--purple);
+        background-color: var(--purple);
+    }
+
+    label[for="prefEmail"], label[for="prefText"], label[for="prefPhone"]{
+        margin-left: 0;
+    }
+
+/* ------- Classes -------*/
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+/* ------- Footer -------*/
+footer{
+    background-color: var(--ltGray);
+}
+
+footer p, footer a{
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    color: var(--black);
+    padding: 1em;
+}
+
+/* ------- Media Queries -------*/
+    /* ------- Tablet -------*/
+    @media screen and (min-width: 768px) {
+        header{
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 2fr 1fr;
+            padding: 1em 3em;
+        }
+
+        header h1, header p{
+            grid-column: 2/-1;
+            grid-row: 1/2;
+        }
+
+        header h1{
+            margin-top: -1.5em;
+        }
+
+        header p{
+            padding-top: 3.5em;
+            padding-right: 1em;
+        }
+
+        nav{
+            grid-column: 1/-1;
+            padding: 1em 2em;
+        }
+
+        nav ul{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75em;
+            padding: 0;
+            background-color: transparent;
+            position: static;
+        }
+
+        nav a{
+            background-color: var(--white);
+            border: none;
+            padding: 1.25em 0.75em;
+        }
+
+        nav a:hover{
+            background-color: var(--yellow);
+        }
+
+        .active a{
+            background-color: var(--yellow);
+        }
+
+        h3{
+            padding: 10px 28px;
+        }
+
+        input, label, select, textarea  {
+            width: 100%;
+        }
+
+        fieldset {
+            display: flex;
+            justify-content: space-between;
+            width: auto;
+            margin: 0;
+        }
+
+        fieldset label {
+            width: auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer{
+            clear: right;
+            display: flex;
+            padding-left: 3em;
+            padding-right: 3em;
+        }
+    }
+
+    /* ------- Laptop -------*/
+    @media screen and (min-width: 1440px){
+        header {
+            grid-template-columns: 1fr 5fr;
+            grid-template-rows: 1fr;
+            padding: 0 0 3em;
+        }
+
+        header h1 {
+            margin: 0 0 0.25em;
+            font-size: 4em;
+        }
+
+        header p {
+            align-self: flex-end;
+            font-size: 1.5em;
+        }
+
+        nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 1.25em;
+        }
+
+        nav a {
+            padding: 0.75em 0.5em;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 33.33%);
+            gap: 1em;
+        }
+
+        .radio-input {
+            margin: 0;
+            padding: 0;
+        }
+
+        input[type="radio"] {
+            width: 1em;
+            height: 1em;
+        }
+
+        input[type="radio"]:checked::before {
+            transform: scale(0.5);
+        }
+
+        footer {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            padding-left: 6em;
+            padding-right: 6em;
+        }
+
+        footer p {
+            grid-column: span 2;
+        }
+            
+        footer a:first-of-type {
+            grid-column: 5;
+        }
+    }
+
+    /* ------- Large Screen Radio Buttons -------*/
+    @media screen and (min-width: 1520px){
+        input[type="radio"] {
+            width: 3em;
+            height: 3em;
+        }
+
+        input[type="radio"]:checked::before {
+            transform: scale(3.5);
+        }
+    }
+
